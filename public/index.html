@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output.css" />
+    <link rel="stylesheet" href="./fontawesome.css" />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet" />
+
+    <title>Document</title>
+  </head>
+  <body class="font-primary">
+    <!-- Mobile Additional Header -->
+    <header
+      class="hidden lg:px-8 lg:flex lg:items-center lg:justify-between lg:py-4 sm:px-6 lg:sticky lg:top-0 lg:left-0 lg:right-0 bg-white dark:bg-dark1">
+      <button id="mobileSidebarExpandButton">
+        <i class="fa-solid fa-bars fa-xl text-slate-800 dark:text-dark5"></i>
+      </button>
+      <a href="#">
+        <img src="./assets/logo.svg" alt="Tailwind Logo" class="h-10" />
+      </a>
+      <button>
+        <i class="fa-solid fa-plus fa-xl text-slate-800 dark:text-dark5"></i>
+      </button>
+    </header>
+
+    <!-- Main Header -->
+    <header
+      class="ml-80 px-8 py-6 flex items-center justify-between gap-x-16 border-b-2 border-b-zinc-200 sticky top-0 z-10 right-0 bg-white dark:bg-dark2 xl:ml-64 lg:w-full lg:m-0 sm:px-6 lg:static lg:dark:bg-dark1 dark:border-b-dark3">
+      <div
+        class="flex items-center border rounded-xl px-3 py-2 gap-x-3 max-w-[500px] w-full dark:bg-dark3 dark:border-dark4 lg:max-w-full">
+        <i class="fa-solid fa-magnifying-glass text-gray-400 fa-lg"></i>
+        <input
+          type="text"
+          placeholder="Search projects..."
+          class="w-full outline-none bg-transparent text-light2 dark:text-dark6" />
+        <div
+          class="text-xs font-bold min-w-[1.25rem] h-5 flex justify-center items-center border border-gray-300 bg-transparent rounded-md shadow-sm bg-gray-100 text-gray-600 dark:border-dark4 dark:bg-dark3 dark:text-dark5">
+          <span>/</span>
+        </div>
+      </div>
+      <nav class="lg:hidden">
+        <ul class="flex gap-x-8 items-center">
+          <li>
+            <a class="text-slate-800 font-medium dark:text-white" href="#"
+              >Documentation</a
+            >
+          </li>
+          <li>
+            <a class="text-slate-800 font-medium dark:text-white" href="#"
+              >Community</a
+            >
+          </li>
+          <li>
+            <a class="text-slate-800 font-medium dark:text-white" href="#"
+              >Support</a
+            >
+          </li>
+          <li>
+            <button
+              class="bg-themeLight text-white font-medium rounded-lg px-4 py-2 whitespace-nowrap dark:bg-themeDark">
+              + New project
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Mobile Sidebar -->
+    <aside
+      id="sidebar"
+      class="hidden lg:flex fixed top-0 -left-full bottom-0 h-screen flex-col gap-y-12 bg-gray-50 p-8 border-r-2 border-r-zinc-200 overflow-y-auto w-full max-w-[480px] z-50 transition-all duration-300 dark:bg-dark1 dark:border-none">
+      <div class="flex justify-between items-center">
+        <a href="#">
+          <img src="./assets/logo.svg" alt="Tailwind Logo" class="h-9" />
+        </a>
+        <button id="mobileSidebarShrinkButton">
+          <i class="fa-solid fa-x fa-xl text-slate-800 dark:text-dark5"></i>
+        </button>
+      </div>
+      <div>
+        <h3 class="text-sm font-medium text-gray-400">Navigation</h3>
+        <ul class="mt-6 flex flex-col gap-y-4">
+          <li>
+            <a href="#" class="block w-full space-x-3">
+              <i class="fa-solid fa-folder fa-lg text-gray-400"></i>
+              <span class="font-medium text-slate-800 dark:text-dark5"
+                >Projects</span
+              >
+            </a>
+          </li>
+          <li>
+            <a href="#" class="block w-full space-x-3">
+              <i
+                class="fa-solid fa-folder fa-lg text-themeLight dark:text-white"></i>
+              <span class="font-semibold text-themeLight dark:text-white"
+                >Deployments</span
+              >
+            </a>
+          </li>
+          <li>
+            <a href="#" class="block w-full space-x-3">
+              <i class="fa-solid fa-folder fa-lg text-gray-400"></i>
+              <span class="font-medium text-slate-800 dark:text-dark5"
+                >Activity</span
+              >
+            </a>
+          </li>
+          <li>
+            <a href="#" class="block w-full space-x-3">
+              <i class="fa-solid fa-globe fa-lg text-gray-400"></i>
+              <span class="font-medium text-slate-800 dark:text-dark5"
+                >Domains</span
+              >
+            </a>
+          </li>
+          <li>
+            <a href="#" class="block w-full space-x-3">
+              <i class="fa-solid fa-folder fa-lg text-gray-400"></i>
+              <span class="font-medium text-slate-800 dark:text-dark5"
+                >Usage</span
+              >
+            </a>
+          </li>
+          <li>
+            <a href="#" class="block w-full space-x-3">
+              <i class="fa-solid fa-gear fa-lg text-gray-400"></i>
+              <span class="font-medium text-slate-800 dark:text-dark5"
+                >Settings</span
+              >
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-sm font-medium text-gray-400">Your teams</h3>
+        <ul class="mt-6 flex flex-col gap-y-4">
+          <li>
+            <a href="#" class="flex w-full gap-x-3 items-center">
+              <div
+                class="text-xs w-6 h-6 flex justify-center items-center border border-zinc-300 text-zinc-400 bg-transparent rounded-md shadow-sm font-semibold dark:text-dark5 dark:border-dark4">
+                <span>P</span>
+              </div>
+              <span class="font-medium text-slate-800 dark:text-dark5"
+                >Planetaria</span
+              >
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex w-full gap-x-3 items-center">
+              <div
+                class="text-xs w-6 h-6 flex justify-center items-center border border-zinc-300 text-zinc-400 bg-transparent rounded-md shadow-sm font-semibold dark:text-dark5 dark:border-dark4">
+                <span>P</span>
+              </div>
+              <span class="font-medium text-slate-800 dark:text-dark5"
+                >Protocol</span
+              >
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex w-full gap-x-3 items-center">
+              <div
+                class="text-xs w-6 h-6 flex justify-center items-center border border-zinc-300 text-zinc-400 bg-transparent rounded-md shadow-sm font-semibold dark:text-dark5 dark:border-dark4">
+                <span>T</span>
+              </div>
+              <span class="font-medium text-slate-800 dark:text-dark5"
+                >Tailwind Labs</span
+              >
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <!-- Desktop Sidebar -->
+    <aside
+      class="fixed top-0 left-0 bottom-0 w-80 h-screen flex flex-col gap-y-12 bg-gray-50 p-8 border-r-2 border-r-zinc-200 overflow-y-auto xl:w-64 lg:hidden dark:bg-dark1 dark:border-r-dark3">
+      <div class="flex justify-between items-center">
+        <a href="#">
+          <img src="./assets/logo.svg" alt="Tailwind Logo" class="h-9" />
+        </a>
+        <button>
+          <i class="fa-solid fa-ellipsis fa-lg text-gray-400"></i>
+        </button>
+      </div>
+      <div>
+        <h3 class="text-sm font-medium text-gray-400">Navigation</h3>
+        <ul class="mt-6 flex flex-col gap-y-4">
+          <li>
+            <a href="#" class="block w-full space-x-3">
+              <i class="fa-solid fa-folder fa-lg text-gray-400"></i>
+              <span class="font-medium text-slate-800 dark:text-dark5"
+                >Projects</span
+              >
+            </a>
+          </li>
+          <li>
+            <a href="#" class="block w-full space-x-3">
+              <i
+                class="fa-solid fa-folder fa-lg text-themeLight dark:text-white"></i>
+              <span class="font-semibold text-themeLight dark:text-white"
+                >Deployments</span
+              >
+            </a>
+          </li>
+          <li>
+            <a href="#" class="block w-full space-x-3">
+              <i class="fa-solid fa-folder fa-lg text-gray-400"></i>
+              <span class="font-medium text-slate-800 dark:text-dark5"
+                >Activity</span
+              >
+            </a>
+          </li>
+          <li>
+            <a href="#" class="block w-full space-x-3">
+              <i class="fa-solid fa-globe fa-lg text-gray-400"></i>
+              <span class="font-medium text-slate-800 dark:text-dark5"
+                >Domains</span
+              >
+            </a>
+          </li>
+          <li>
+            <a href="#" class="block w-full space-x-3">
+              <i class="fa-solid fa-folder fa-lg text-gray-400"></i>
+              <span class="font-medium text-slate-800 dark:text-dark5"
+                >Usage</span
+              >
+            </a>
+          </li>
+          <li>
+            <a href="#" class="block w-full space-x-3">
+              <i class="fa-solid fa-gear fa-lg text-gray-400"></i>
+              <span class="font-medium text-slate-800 dark:text-dark5"
+                >Settings</span
+              >
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-sm font-medium text-gray-400">Your teams</h3>
+        <ul class="mt-6 flex flex-col gap-y-4">
+          <li>
+            <a href="#" class="flex w-full gap-x-3 items-center">
+              <div
+                class="text-xs w-6 h-6 flex justify-center items-center border border-zinc-300 text-zinc-400 bg-transparent rounded-md shadow-sm font-semibold dark:text-dark5 dark:border-dark4">
+                <span>P</span>
+              </div>
+              <span class="font-medium text-slate-800 dark:text-dark5"
+                >Planetaria</span
+              >
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex w-full gap-x-3 items-center">
+              <div
+                class="text-xs w-6 h-6 flex justify-center items-center border border-zinc-300 text-zinc-400 bg-transparent rounded-md shadow-sm font-semibold dark:text-dark5 dark:border-dark4">
+                <span>P</span>
+              </div>
+              <span class="font-medium text-slate-800 dark:text-dark5"
+                >Protocol</span
+              >
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex w-full gap-x-3 items-center">
+              <div
+                class="text-xs w-6 h-6 flex justify-center items-center border border-zinc-300 text-zinc-400 bg-transparent rounded-md shadow-sm font-semibold dark:text-dark5 dark:border-dark4">
+                <span>T</span>
+              </div>
+              <span class="font-medium text-slate-800 dark:text-dark5"
+                >Tailwind Labs</span
+              >
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- This is the main content with heading "Deployments" -->
+    <main
+      class="ml-80 bg-white mr-96 xl:ml-64 xl:mr-80 lg:w-full lg:m-0 dark:bg-dark2">
+      <div class="p-8 col-span-3 sm:px-6">
+        <div class="flex items-center justify-between">
+          <h2 class="text-slate-800 font-semibold dark:text-white">
+            Deployments
+          </h2>
+          <button class="font-medium dark:text-white">
+            Sort by <i class="fa-solid fa-sort ml-2 text-gray-400"></i>
+          </button>
+        </div>
+        <div class="mt-4 flex flex-col">
+          <a href="#" class="flex items-center justify-between py-6">
+            <div class="flex flex-col items-start gap-y-3">
+              <div class="flex items-center gap-x-4">
+                <i
+                  class="fa-solid fa-circle fa-xs text-statusPreviewDotColor"></i>
+                <div class="flex items-center gap-x-3">
+                  <h4
+                    class="text-slate-800 font-semibold dark:text-white dark:font-medium">
+                    Planetaria
+                  </h4>
+                  <span class="text-light4">/</span>
+                  <h4
+                    class="text-slate-800 font-semibold dark:text-white dark:font-medium">
+                    ios-app
+                  </h4>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-x-3 text-light3 text-sm whitespace-nowrap xs:gap-x-1 xs:text-xs">
+                <span>Deploys from GitHub</span>
+                <i class="fa-solid fa-circle w-0.5"></i>
+                <span>Initiated 1m 32s ago</span>
+              </div>
+            </div>
+            <div>
+              <span
+                class="text-statusPreviewTextLight dark:text-statusPreviewTextDark border-2 bg-statusPreviewBgLight dark:bg-statusPreviewBgDark border-dotted border-statusPreviewBorderColorLight dark:border-statusPreviewBorderColorDark px-3 py-1 rounded-2xl text-sm font-medium lg:hidden"
+                >Preview</span
+              >
+              <i class="fa-solid fa-chevron-right text-gray-400 ml-4 fa-sm"></i>
+            </div>
+          </a>
+          <hr class="border-gray-200 dark:border-dark3" />
+          <a href="#" class="flex items-center justify-between py-6">
+            <div class="flex flex-col items-start gap-y-3">
+              <div class="flex items-center gap-x-4">
+                <i
+                  class="fa-solid fa-circle fa-xs text-statusProductionDotColor"></i>
+                <div class="flex items-center gap-x-3">
+                  <h4
+                    class="text-slate-800 font-semibold dark:text-white dark:font-medium">
+                    Planetaria
+                  </h4>
+                  <span class="text-light4">/</span>
+                  <h4
+                    class="text-slate-800 font-semibold dark:text-white dark:font-medium">
+                    mobile-api
+                  </h4>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-x-3 text-light3 text-sm whitespace-nowrap xs:gap-x-1 xs:text-xs">
+                <span>Deploys from GitHub</span>
+                <i class="fa-solid fa-circle w-0.5"></i>
+                <span>Deployed 3m ago</span>
+                <i class="fa-solid fa-circle w-0.5"></i>
+                <span>32s</span>
+              </div>
+            </div>
+            <div>
+              <span
+                class="text-statusProductionTextLight dark:text-statusProductionTextDark border-2 bg-statusProductionBgLight dark:bg-statusProductionBgDark border-statusProductionBorderColorLight dark:border-statusProductionBorderColorDark px-3 py-1 rounded-2xl text-sm font-medium lg:hidden"
+                >Production</span
+              >
+              <i class="fa-solid fa-chevron-right text-gray-400 ml-4 fa-sm"></i>
+            </div>
+          </a>
+          <hr class="border-gray-200 dark:border-dark3" />
+          <a href="#" class="flex items-center justify-between py-6">
+            <div class="flex flex-col items-start gap-y-3">
+              <div class="flex items-center gap-x-4">
+                <i
+                  class="fa-solid fa-circle fa-xs text-statusPreviewDotColor"></i>
+                <div class="flex items-center gap-x-3">
+                  <h4
+                    class="text-slate-800 font-semibold dark:text-white dark:font-medium">
+                    Planetaria
+                  </h4>
+                  <span class="text-light4">/</span>
+                  <h4
+                    class="text-slate-800 font-semibold dark:text-white dark:font-medium">
+                    ios-app
+                  </h4>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-x-3 text-light3 text-sm whitespace-nowrap xs:gap-x-1 xs:text-xs">
+                <span>Deploys from GitHub</span>
+                <i class="fa-solid fa-circle w-0.5"></i>
+                <span>Initiated 1m 32s ago</span>
+              </div>
+            </div>
+            <div>
+              <span
+                class="text-statusPreviewTextLight dark:text-statusPreviewTextDark border-2 bg-statusPreviewBgLight dark:bg-statusPreviewBgDark border-dotted border-statusPreviewBorderColorLight dark:border-statusPreviewBorderColorDark px-3 py-1 rounded-2xl text-sm font-medium lg:hidden"
+                >Preview</span
+              >
+              <i class="fa-solid fa-chevron-right text-gray-400 ml-4 fa-sm"></i>
+            </div>
+          </a>
+          <hr class="border-gray-200 dark:border-dark3" />
+          <a href="#" class="flex items-center justify-between py-6">
+            <div class="flex flex-col items-start gap-y-3">
+              <div class="flex items-center gap-x-4">
+                <i
+                  class="fa-solid fa-circle fa-xs text-statusProductionDotColor"></i>
+                <div class="flex items-center gap-x-3">
+                  <h4
+                    class="text-slate-800 font-semibold dark:text-white dark:font-medium">
+                    Planetaria
+                  </h4>
+                  <span class="text-light4">/</span>
+                  <h4
+                    class="text-slate-800 font-semibold dark:text-white dark:font-medium">
+                    mobile-api
+                  </h4>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-x-3 text-light3 text-sm whitespace-nowrap xs:gap-x-1 xs:text-xs">
+                <span>Deploys from GitHub</span>
+                <i class="fa-solid fa-circle w-0.5"></i>
+                <span>Deployed 3m ago</span>
+                <i class="fa-solid fa-circle w-0.5"></i>
+                <span>32s</span>
+              </div>
+            </div>
+            <div>
+              <span
+                class="text-statusProductionTextLight dark:text-statusProductionTextDark border-2 bg-statusProductionBgLight dark:bg-statusProductionBgDark border-statusProductionBorderColorLight dark:border-statusProductionBorderColorDark px-3 py-1 rounded-2xl text-sm font-medium lg:hidden"
+                >Production</span
+              >
+              <i class="fa-solid fa-chevron-right text-gray-400 ml-4 fa-sm"></i>
+            </div>
+          </a>
+          <hr class="border-gray-200 dark:border-dark3" />
+          <a href="#" class="flex items-center justify-between py-6">
+            <div class="flex flex-col items-start gap-y-3">
+              <div class="flex items-center gap-x-4">
+                <i
+                  class="fa-solid fa-circle fa-xs text-statusPreviewDotColor"></i>
+                <div class="flex items-center gap-x-3">
+                  <h4
+                    class="text-slate-800 font-semibold dark:text-white dark:font-medium">
+                    Planetaria
+                  </h4>
+                  <span class="text-light4">/</span>
+                  <h4
+                    class="text-slate-800 font-semibold dark:text-white dark:font-medium">
+                    ios-app
+                  </h4>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-x-3 text-light3 text-sm whitespace-nowrap xs:gap-x-1 xs:text-xs">
+                <span>Deploys from GitHub</span>
+                <i class="fa-solid fa-circle w-0.5"></i>
+                <span>Initiated 1m 32s ago</span>
+              </div>
+            </div>
+            <div>
+              <span
+                class="text-statusPreviewTextLight dark:text-statusPreviewTextDark border-2 bg-statusPreviewBgLight dark:bg-statusPreviewBgDark border-dotted border-statusPreviewBorderColorLight dark:border-statusPreviewBorderColorDark px-3 py-1 rounded-2xl text-sm font-medium lg:hidden"
+                >Preview</span
+              >
+              <i class="fa-solid fa-chevron-right text-gray-400 ml-4 fa-sm"></i>
+            </div>
+          </a>
+          <hr class="border-gray-200 dark:border-dark3" />
+          <a href="#" class="flex items-center justify-between py-6">
+            <div class="flex flex-col items-start gap-y-3">
+              <div class="flex items-center gap-x-4">
+                <i
+                  class="fa-solid fa-circle fa-xs text-statusProductionDotColor"></i>
+                <div class="flex items-center gap-x-3">
+                  <h4
+                    class="text-slate-800 font-semibold dark:text-white dark:font-medium">
+                    Planetaria
+                  </h4>
+                  <span class="text-light4">/</span>
+                  <h4
+                    class="text-slate-800 font-semibold dark:text-white dark:font-medium">
+                    mobile-api
+                  </h4>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-x-3 text-light3 text-sm whitespace-nowrap xs:gap-x-1 xs:text-xs">
+                <span>Deploys from GitHub</span>
+                <i class="fa-solid fa-circle w-0.5"></i>
+                <span>Deployed 3m ago</span>
+                <i class="fa-solid fa-circle w-0.5"></i>
+                <span>32s</span>
+              </div>
+            </div>
+            <div>
+              <span
+                class="text-statusProductionTextLight dark:text-statusProductionTextDark border-2 bg-statusProductionBgLight dark:bg-statusProductionBgDark border-statusProductionBorderColorLight dark:border-statusProductionBorderColorDark px-3 py-1 rounded-2xl text-sm font-medium lg:hidden"
+                >Production</span
+              >
+              <i class="fa-solid fa-chevron-right text-gray-400 ml-4 fa-sm"></i>
+            </div>
+          </a>
+          <hr class="border-gray-200 dark:border-dark3" />
+          <a href="#" class="flex items-center justify-between py-6">
+            <div class="flex flex-col items-start gap-y-3">
+              <div class="flex items-center gap-x-4">
+                <i
+                  class="fa-solid fa-circle fa-xs text-statusPreviewDotColor"></i>
+                <div class="flex items-center gap-x-3">
+                  <h4
+                    class="text-slate-800 font-semibold dark:text-white dark:font-medium">
+                    Planetaria
+                  </h4>
+                  <span class="text-light4">/</span>
+                  <h4
+                    class="text-slate-800 font-semibold dark:text-white dark:font-medium">
+                    ios-app
+                  </h4>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-x-3 text-light3 text-sm whitespace-nowrap xs:gap-x-1 xs:text-xs">
+                <span>Deploys from GitHub</span>
+                <i class="fa-solid fa-circle w-0.5"></i>
+                <span>Initiated 1m 32s ago</span>
+              </div>
+            </div>
+            <div>
+              <span
+                class="text-statusPreviewTextLight dark:text-statusPreviewTextDark border-2 bg-statusPreviewBgLight dark:bg-statusPreviewBgDark border-dotted border-statusPreviewBorderColorLight dark:border-statusPreviewBorderColorDark px-3 py-1 rounded-2xl text-sm font-medium lg:hidden"
+                >Preview</span
+              >
+              <i class="fa-solid fa-chevron-right text-gray-400 ml-4 fa-sm"></i>
+            </div>
+          </a>
+          <hr class="border-gray-200 dark:border-dark3" />
+          <a href="#" class="flex items-center justify-between py-6">
+            <div class="flex flex-col items-start gap-y-3">
+              <div class="flex items-center gap-x-4">
+                <i
+                  class="fa-solid fa-circle fa-xs text-statusProductionDotColor"></i>
+                <div class="flex items-center gap-x-3">
+                  <h4
+                    class="text-slate-800 font-semibold dark:text-white dark:font-medium">
+                    Planetaria
+                  </h4>
+                  <span class="text-light4">/</span>
+                  <h4
+                    class="text-slate-800 font-semibold dark:text-white dark:font-medium">
+                    mobile-api
+                  </h4>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-x-3 text-light3 text-sm whitespace-nowrap xs:gap-x-1 xs:text-xs">
+                <span>Deploys from GitHub</span>
+                <i class="fa-solid fa-circle w-0.5"></i>
+                <span>Deployed 3m ago</span>
+                <i class="fa-solid fa-circle w-0.5"></i>
+                <span>32s</span>
+              </div>
+            </div>
+            <div>
+              <span
+                class="text-statusProductionTextLight dark:text-statusProductionTextDark border-2 bg-statusProductionBgLight dark:bg-statusProductionBgDark border-statusProductionBorderColorLight dark:border-statusProductionBorderColorDark px-3 py-1 rounded-2xl text-sm font-medium lg:hidden"
+                >Production</span
+              >
+              <i class="fa-solid fa-chevron-right text-gray-400 ml-4 fa-sm"></i>
+            </div>
+          </a>
+          <hr class="border-gray-200 dark:border-dark3" />
+        </div>
+      </div>
+    </main>
+
+    <!-- Right Sidebar -->
+    <aside
+      class="p-8 col-span-2 bg-gray-50 fixed top-0 right-0 bottom-0 pt-32 w-96 border-l-2 border-l-zinc-200 overflow-y-auto xl:w-80 lg:static lg:w-full lg:pt-8 sm:px-6 dark:bg-dark1 dark:border-l-dark3">
+      <div class="flex items-center justify-between">
+        <h2 class="text-slate-800 font-semibold dark:text-white">
+          Activity Feed
+        </h2>
+        <a href="#" class="text-themeLight font-medium dark:text-themeDark">
+          View all <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="mt-4">
+        <a href="#" class="flex flex-col items-start gap-y-3 py-6">
+          <div class="flex w-full items-center justify-between">
+            <div class="flex items-center gap-x-2">
+              <div class="w-7 h-7 rounded-full overflow-hidden">
+                <img
+                  class="object-cover h-full"
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                  alt="Person" />
+              </div>
+              <h5
+                class="text-slate-800 font-medium dark:text-white dark:font-normal">
+                Cosetta Dusett
+              </h5>
+            </div>
+            <span class="text-sm text-light3 dark:text-dark4">30s</span>
+          </div>
+          <div class="text-light3">
+            Pushed to
+            <span class="text-light2 dark:text-dark6">ios-app</span>
+            (<span class="text-light2 dark:text-dark6">27c83j</span>
+            on
+            <span class="text-light2 dark:text-dark6">main</span>)
+          </div>
+        </a>
+        <hr class="border-gray-200 dark:border-dark3" />
+        <a href="#" class="flex flex-col items-start gap-y-3 py-6">
+          <div class="flex w-full items-center justify-between">
+            <div class="flex items-center gap-x-2">
+              <div class="w-7 h-7 rounded-full overflow-hidden">
+                <img
+                  class="object-cover h-full"
+                  src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29ufGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                  alt="Person" />
+              </div>
+              <h5
+                class="text-slate-800 font-medium dark:text-white dark:font-normal">
+                Pammi Kakani
+              </h5>
+            </div>
+            <span class="text-sm text-light3 dark:text-dark4">3m</span>
+          </div>
+          <div class="text-light3">
+            Pushed to
+            <span class="text-light2 dark:text-dark6">mobile-api</span>
+            (<span class="text-light2 dark:text-dark6">29jsd</span>
+            on
+            <span class="text-light2 dark:text-dark6">main</span>)
+          </div>
+        </a>
+        <hr class="border-gray-200 dark:border-dark3" />
+        <a href="#" class="flex flex-col items-start gap-y-3 py-6">
+          <div class="flex w-full items-center justify-between">
+            <div class="flex items-center gap-x-2">
+              <div class="w-7 h-7 rounded-full overflow-hidden">
+                <img
+                  class="object-cover h-full"
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                  alt="Person" />
+              </div>
+              <h5
+                class="text-slate-800 font-medium dark:text-white dark:font-normal">
+                Cosetta Dusett
+              </h5>
+            </div>
+            <span class="text-sm text-light3 dark:text-dark4">30s</span>
+          </div>
+          <div class="text-light3">
+            Pushed to
+            <span class="text-light2 dark:text-dark6">ios-app</span>
+            (<span class="text-light2 dark:text-dark6">27c83j</span>
+            on
+            <span class="text-light2 dark:text-dark6">main</span>)
+          </div>
+        </a>
+        <hr class="border-gray-200 dark:border-dark3" />
+        <a href="#" class="flex flex-col items-start gap-y-3 py-6">
+          <div class="flex w-full items-center justify-between">
+            <div class="flex items-center gap-x-2">
+              <div class="w-7 h-7 rounded-full overflow-hidden">
+                <img
+                  class="object-cover h-full"
+                  src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29ufGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                  alt="Person" />
+              </div>
+              <h5
+                class="text-slate-800 font-medium dark:text-white dark:font-normal">
+                Pammi Kakani
+              </h5>
+            </div>
+            <span class="text-sm text-light3 dark:text-dark4">3m</span>
+          </div>
+          <div class="text-light3">
+            Pushed to
+            <span class="text-light2 dark:text-dark6">mobile-api</span>
+            (<span class="text-light2 dark:text-dark6">29jsd</span>
+            on
+            <span class="text-light2 dark:text-dark6">main</span>)
+          </div>
+        </a>
+        <hr class="border-gray-200 dark:border-dark3" />
+      </div>
+    </aside>
+    <script src="../src/index.js"></script>
+    <script src="./fontawesome.js"></script>
+  </body>
+</html>
